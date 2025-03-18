@@ -4,6 +4,7 @@ import getpass
 import uuid
 import hashlib
 import subprocess
+import requests
 
 # Function to compute a unique device ID from username, hostname, and MAC address.
 def get_device_id():
@@ -49,5 +50,16 @@ def disconnect():
 
 if __name__ == '__main__':
     # Replace 'http://your-server-ip:5000' with your server's URL.
-    sio.connect('http://127.0.0.1:5000')
+    # Fetch the IP address from the given URL.
+    try:
+        response = requests.get('https://raw.githubusercontent.com/xXxNIKIxXx/AbiStreich/refs/heads/main/ip.txt?token=GHSAT0AAAAAACZLAFG3KL2DYZMNEMJJSSEOZ6ZE77Q')
+        response.raise_for_status()
+        server_ip = response.text.strip()
+        print("Fetched server IP:", server_ip)
+    except requests.RequestException as e:
+        print("Error fetching server IP:", e)
+        exit(1)
+
+    # Connect to the fetched server IP.
+    sio.connect(f'http://{server_ip}')
     sio.wait()
