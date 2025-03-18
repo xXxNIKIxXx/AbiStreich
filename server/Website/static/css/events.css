@@ -1,0 +1,32 @@
+body {
+	overflow-y: auto;
+}
+
+.outer-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	box-sizing: border-box;
+	padding: 20px;
+	overflow-y: auto;
+}
+
+.content {
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	box-sizing: border-box;
+}
+
+.container {
+	backdrop-filter: var(--small-blur);
+	border: var(--border);
+	border-radius: var(--small-border-radius);
+	background-color: var(--background);
+	padding: 20px;
+	box-sizing: border-box;
+	word-wrap: break-word;
+}

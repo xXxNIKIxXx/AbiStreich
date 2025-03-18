@@ -1,0 +1,11 @@
+:root {
+    --line-color: rgba(87, 87, 87, 0.5);
+    --background-color: #121212;
+    --circle-lines: #195688;
+    --circle-border-lines: #2890e3;
+    --circle-inner-text: var(--bs-body-color);
+    --circle-lines-text: var(--bs-body-color);
+    --background: rgb(53 53 53 / 40%);
+
+    --legend_button_filter: opacity(0.8)
+}
